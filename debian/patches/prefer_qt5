@@ -1,0 +1,13 @@
+Index: gambas3/main/lib/gui.qt/main.c
+===================================================================
+--- gambas3.orig/main/lib/gui.qt/main.c
++++ gambas3/main/lib/gui.qt/main.c
+@@ -58,7 +58,7 @@ int EXPORT GB_INIT(void)
+ 	
+ 	if (use == USE_NOTHING)
+ 	{
+-		use = USE_GB_QT4;
++		use = USE_GB_QT5;
+ 		
+ 		env = getenv("KDE_FULL_SESSION");
+ 		

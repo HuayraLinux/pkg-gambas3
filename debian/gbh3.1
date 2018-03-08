@@ -1,0 +1,138 @@
+.TH "gbh3" "1" "August 2016" "Debian" "User Commands"
+
+.SH "NAME"
+gbh3 \- GAMBAS documentation generator for C/C++ components
+
+.SH "SYNOPSIS"
+.B gbh3
+[\fIoptions\fR] [<sources>]
+
+.SH "DESCRIPTION"
+Gambas is a free development environment based on a Basic interpreter with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+With Gambas, you can quickly design your program GUI, access MySQL or PostgreSQL databases, pilot KDE applications with DCOP, translate your program into many languages, and so on...
+
+\fBgbh3\fR is a tool to generate GAMBAS online documentation from documentation strings embedded in C/C++ source
+code of GAMBAS components. 
+.PP
+
+Components written in Gambas can already be documented in-code. This documentation is then stored 
+inside their .info files.
+
+.SH "OPTIONS"
+.TP
+\fB\-r\fR, \fB\-\-root\fR <root>
+the GAMBAS installation directory
+.TP
+\fB\-c\fR, \fB\-\-component\fR <component>
+generate help directly in a component '*.help' file
+.TP
+\fB\-v\fR, \fB\-\-verbose\fR
+be verbose
+.TP
+\fB\-V\fR, \fB\-\-version\fR
+display version information and exit
+.TP
+\fB\-L\fR, \fB\-\-license\fR
+display license and exit
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+display this help and exit
+
+.SH "USAGE"
+
+If <sources> contains directories, they are searched recursively for '*.c'
+and '*.cpp' files. If <sources> is not specified, the current directory
+is searched.
+
+The extracted help is printed on the standard output, unless the '-c' 
+option is specified.
+
+.SH "DOCUMENTATION SYNTAX"
+
+You may write a Gambas documentation comment like
+
+  /**G
+   * Here goes the documentation.
+   **/
+  BEGIN_METHOD_VOID(ClassName_MethodName)
+  	/* ... */
+  END_METHOD
+
+or alternatively
+
+  /**G Class Symbol
+   * Documenting Class.Symbol
+   **/
+
+Instead of the **/ at the end, you may also write */. Cool, huh?
+
+The second syntax can also be used to document the class per se:
+
+  /**G Class
+   * Class documentation here
+   **/
+
+The difference between both notations is that the first must immediately
+precede a BEGIN_{PROPERTY,METHOD,METHOD_VOID) line that defines the symbol
+to which the documentation refers. The second syntax documents the indicated
+symbol -- no matter where the comment is.
+.PP
+This is intended to document GB_CONSTANTs or GB_PROPERTY_SELFs which don't
+have a BEGIN_* line. It can neverthelss be used for any other symbol but
+NEVER intermix both syntaxes on a single symbol.
+.PP
+The ClassName_MethodName part I call "(implementation) function name". The
+particular function naming convention shown is not mandatory. The scripts
+take the function name and look up the corresponding symbol in your
+GB_DESC[].
+
+.SH "WARNING"
+
+The regular expressions used to filter these comments are somewhat strict.
+You have to pass the spaces exactly as indicated in the line where your
+comment text starts, i.e. <space>*<space>text. Also note that Class and
+Symbol in the second syntax are case sensitive!
+.PP
+Don't reuse method and property implementations (except for synonyms).
+.PP
+As the implementation function name is searched in the GB_DESC[]s in your
+source file, you may not put the same function into different classes -- or
+the parser may get confused.
+.PP
+Also, keep the GB_DESC[] in the same source file as the help comment.
+
+.SH "SYNONYMS"
+
+The first match for a function name lookup in a GB_DESC[] is taken as the
+"primary" implementation of that symbol. That means the help comment will
+be attched to that symbol. All other symbols which call the same function
+are considered synonyms and are *automatically* documented with the default
+sentence: "This is a synonym for <primary-symbol>". DO NOT document them
+separately using a syntax-2 help block!
+
+.SH "EXAMPLES"
+
+gb.openssl and gb.data are partially documented that way. Digest.Hash() and
+Digest._call() in gb.openssl show how to deal with synonyms. There the entry
+for Hash precedes the entry for _call, thus Hash is the primary symbol and
+_call a synonym.
+
+To see a sample .help file (on stdout), you can do at the source tree root:
+
+  $ gbx3 app/src/gbh3 -- gb.openssl
+
+.SH "AVAILABILITY"
+The latest version of Gambas can always be obtained from
+\fBhttp://gambas.sf.net\fR.
+
+
+.SH "REPORTING BUGS"
+Report bugs to
+<gambas@users.sourceforge.net>.
+
+.SH "COPYRIGHT"
+Copyright\(co 2002, 2016 Benoit Minisini <gambas@users.sourceforge.net; This manual page written for the
+Debian project (and can be used by others) by Ian Haywood <ian@haywood.id.au>
+.PP
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

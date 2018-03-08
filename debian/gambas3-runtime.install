@@ -1,19 +1,22 @@
+../../main/mime/application-x-gambas3.xml usr/share/gambas3/mime
+usr/bin/gbh3
+usr/bin/gbh3.gambas
+usr/bin/gbr3
 usr/bin/gbx3
 usr/lib/gambas3/gb.component
-usr/lib/gambas3/gb.eval.component
-usr/lib/gambas3/gb.so*
-usr/lib/gambas3/gb.eval.so*
 usr/lib/gambas3/gb.debug*
 usr/lib/gambas3/gb.draw*
-usr/lib/gambas3/gb.gui.base*
+usr/lib/gambas3/gb.eval.component
+usr/lib/gambas3/gb.eval.so*
 usr/lib/gambas3/gb.geom.so*
-usr/share/gambas3/info/gb.info
-usr/share/gambas3/info/gb.list
-usr/share/gambas3/info/gb.eval.info
-usr/share/gambas3/info/gb.eval.list
+usr/lib/gambas3/gb.gui.base*
+usr/lib/gambas3/gb.so*
+usr/share/gambas3/icons/application-x-gambas3.png
 usr/share/gambas3/info/gb.debug.info
 usr/share/gambas3/info/gb.debug.list
+usr/share/gambas3/info/gb.eval.info
+usr/share/gambas3/info/gb.eval.list
 usr/share/gambas3/info/gb.gui.base.info
 usr/share/gambas3/info/gb.gui.base.list
-../../main/mime/application-x-gambas3.png usr/share/gambas3/icons
-../../main/mime/application-x-gambas3.xml usr/share/gambas3/mime
+usr/share/gambas3/info/gb.info
+usr/share/gambas3/info/gb.list

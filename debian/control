@@ -2,17 +2,161 @@ Source: gambas3
 Section: devel
 Priority: optional
 Homepage: http://gambas.sourceforge.net
-Vcs-Git: git://anonscm.debian.org/pkg-gambas/gambas3.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-gambas/gambas3.git
-Maintainer: Gambas Debian Maintainers <pkg-gambas-devel@lists.alioth.debian.org> 
-Uploaders: Ian Haywood <ian@haywood.id.au>, David Paleino <dapal@debian.org>, José L. Redrejo Rodríguez <jredrejo@debian.org>
-Build-Depends: debhelper (>= 9), dh-autoreconf, libpq-dev, libv4l-dev [linux-any], libv4l-dev [kfreebsd-any], libcam-dev [kfreebsd-any], libmysqlclient-dev, libbz2-dev, libglew-dev, libqt4-dev, libqt4-opengl-dev, libcurl4-openssl-dev, libsdl-mixer1.2-dev, libsqlite0-dev, libxml2-dev, libxslt1-dev, kdelibs5-dev, libssl-dev, zlib1g-dev, unixodbc-dev, libsqlite3-dev, libgtk2.0-dev, libxt-dev, pkg-config, mesa-common-dev, libsdl-sound1.2-dev, libsdl-image1.2-dev, libsdl-gfx1.2-dev, libsdl-ttf2.0-dev, libpcre3-dev, libsdl1.2-dev, libjpeg-dev, libpng12-dev, libpoppler-private-dev, libimlib2-dev, librsvg2-dev, bzip2, gettext, libxtst-dev, libffi-dev, libdbus-1-dev, libgnome-keyring-dev, libgtkglext1-dev, linux-libc-dev [linux-any], libc0.1 [kfreebsd-any], libqtwebkit-dev, libgsl0-dev, libncurses5-dev, libtool, libgmime-2.6-dev, llvm-dev (>> 1:3.1) [amd64 armel armhf i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc s390 s390x sparc], libgmp-dev, libopenal-dev, libalure-dev, libgstreamer1.0-dev, libgstreamer-plugins-base1.0-dev, postgresql-server-dev-all
-Standards-Version: 3.9.5
+Vcs-Git: https://anonscm.debian.org/git/pkg-gambas/gambas3.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-gambas/gambas3.git
+Maintainer: Matias De lellis <mati86dl@gmail.com>
+Uploaders: Matias De lellis <mati86dl@gmail.com>,
+           Ian Haywood <ian@haywood.id.au>,
+           David Paleino <dapal@debian.org>,
+           José L. Redrejo Rodríguez <jredrejo@debian.org>
+Build-Depends: bzip2,
+               debhelper (>= 9),
+               dh-autoreconf,
+               gettext,
+               libalure-dev,
+               libbz2-dev,
+               libc0.1 [kfreebsd-any],
+               libcam-dev [kfreebsd-any],
+               libcurl4-openssl-dev,
+               libdbus-1-dev,
+               libdumb1,
+               libffi-dev,
+               libglew-dev,
+               libgmime-2.6-dev,
+               libgmp-dev,
+               libgnome-keyring-dev,
+               libgsl0-dev,
+               libgstreamer-plugins-base1.0-dev,
+               libgstreamer1.0-dev,
+               libgtk-3-dev,
+               libgtk2.0-dev,
+               libgtkglext1-dev,
+               libimlib2-dev,
+               libjpeg-dev,
+               libmpg123-dev,
+               libmysqlclient-dev,
+               libncurses5-dev,
+               libopenal-dev,
+               libpcre3-dev,
+               libpng-dev,
+               libpoppler-private-dev,
+               libpq-dev,
+               libqt4-dev,
+               libqt4-opengl-dev,
+               libqt5svg5-dev,
+               libqt5webkit5-dev,
+               libqt5x11extras5-dev,
+               libqt5opengl5-dev,
+               libqtwebkit-dev,
+               librsvg2-dev,
+               libsdl-gfx1.2-dev,
+               libsdl-image1.2-dev,
+               libsdl-mixer1.2-dev,
+               libsdl-sound1.2-dev,
+               libsdl-ttf2.0-dev,
+               libsdl1.2-dev,
+               libsdl2-dev,
+               libsdl2-image-dev,
+               libsdl2-mixer-dev,
+               libsdl2-ttf-dev,
+               libsqlite0-dev,
+               libsqlite3-dev,
+               libssl-dev,
+               libtool,
+               libv4l-dev [!hurd-any],
+               libxml2-dev,
+               libxslt1-dev,
+               libxt-dev,
+               libxtst-dev,
+               linux-libc-dev [linux-any],
+#               llvm-3.5-dev [!hurd-any],
+               mesa-common-dev,
+               pkg-config,
+               postgresql-server-dev-all,
+               unixodbc-dev,
+               xdg-utils,
+               zlib1g-dev
+Standards-Version: 4.1.2
 
 Package: gambas3
 Architecture: all
-Section: devel
-Depends: ${misc:Depends}, gambas3-gb-cairo (>= ${binary:Version}), gambas3-gb-clipper (>= ${binary:Version}), gambas3-gb-dbus (>= ${binary:Version}), gambas3-examples (>= ${binary:Version}), gambas3-gb-form-stock (>= ${binary:Version}), gambas3-gb-chart (>= ${binary:Version}), gambas3-gb-compress-bzlib2 (>= ${binary:Version}), gambas3-gb-compress-zlib (>= ${binary:Version}), gambas3-gb-crypt (>= ${binary:Version}), gambas3-gb-db-form (>= ${binary:Version}), gambas3-gb-db-mysql (>= ${binary:Version}), gambas3-gb-db-postgresql (>= ${binary:Version}), gambas3-gb-db-odbc (>= ${binary:Version}), gambas3-gb-db-sqlite3 (>= ${binary:Version}) | gambas3-gb-db-sqlite2 (>= ${binary:Version}), gambas3-gb-desktop (>= ${binary:Version}), gambas3-gb-form-dialog (>= ${binary:Version}), gambas3-gb-form-mdi (>= ${binary:Version}), gambas3-gb-gmp (>= ${binary:Version}), gambas3-gb-gui-opengl (>= ${binary:Version}), gambas3-gb-image-effect (>= ${binary:Version}), gambas3-gb-image-imlib (>= ${binary:Version}), gambas3-gb-image-io (>= ${binary:Version}), gambas3-gb-net-curl (>= ${binary:Version}), gambas3-gb-net-smtp (>= ${binary:Version}), gambas3-gb-net-pop3 (>= ${binary:Version}), gambas3-gb-openal (>= ${binary:Version}), gambas3-gb-opengl-glsl (>= ${binary:Version}), gambas3-gb-opengl-glu (>= ${binary:Version}), gambas3-gb-opengl-sge (>= ${binary:Version}), gambas3-gb-openssl (>= ${binary:Version}), gambas3-gb-pcre (>= ${binary:Version}), gambas3-gb-pdf (>= ${binary:Version}), gambas3-gb-qt4-ext (>= ${binary:Version}), gambas3-gb-qt4-webkit (>= ${binary:Version}), gambas3-gb-report (>= ${binary:Version}), gambas3-gb-sdl-sound (>= ${binary:Version}), gambas3-gb-settings (>= ${binary:Version}), gambas3-gb-vb, gambas3-gb-v4l (>= ${binary:Version}), gambas3-gb-web, gambas3-gb-xml-rpc (>= ${binary:Version}), gambas3-gb-xml-xslt (>= ${binary:Version}), gambas3-gb-xml-html (>= ${binary:Version}), gambas3-gb-libxml (>= ${binary:Version}), gambas3-ide (>= ${binary:Version}), gambas3-gb-mysql (>= ${binary:Version}), gambas3-gb-option (>= ${binary:Version}), gambas3-gb-gsl (>= ${binary:Version}), gambas3-gb-ncurses (>= ${binary:Version}), gambas3-gb-complex (>= ${binary:Version}), gambas3-gb-data (>= ${binary:Version}), gambas3-gb-mime (>= ${binary:Version}), gambas3-gb-httpd (>= ${binary:Version}), gambas3-gb-memcached (>= ${binary:Version}), gambas3-gb-args (>= ${binary:Version}), gambas3-gb-map (>= ${binary:Version}), gambas3-gb-jit (>= ${binary:Version}), gambas3-gb-desktop-gnome (>= ${binary:Version}), gambas3-gb-media (>= ${binary:Version}), gambas3-gb-logging (>= ${binary:Version})
+Depends: gambas3-gb-args (>= ${binary:Version}),
+         gambas3-gb-cairo (>= ${binary:Version}),
+         gambas3-gb-chart (>= ${binary:Version}),
+         gambas3-gb-clipper (>= ${binary:Version}),
+         gambas3-gb-complex (>= ${binary:Version}),
+         gambas3-gb-compress-bzlib2 (>= ${binary:Version}),
+         gambas3-gb-compress-zlib (>= ${binary:Version}),
+         gambas3-gb-crypt (>= ${binary:Version}),
+         gambas3-gb-data (>= ${binary:Version}),
+         gambas3-gb-db-form (>= ${binary:Version}),
+         gambas3-gb-db-mysql (>= ${binary:Version}),
+         gambas3-gb-db-odbc (>= ${binary:Version}),
+         gambas3-gb-db-postgresql (>= ${binary:Version}),
+         gambas3-gb-db-sqlite3 (>= ${binary:Version}),
+         gambas3-gb-dbus (>= ${binary:Version}),
+         gambas3-gb-desktop (>= ${binary:Version}),
+         gambas3-gb-desktop-x11 (>= ${binary:Version}),
+         gambas3-gb-form-dialog (>= ${binary:Version}),
+         gambas3-gb-form-mdi (>= ${binary:Version}),
+         gambas3-gb-form-stock (>= ${binary:Version}),
+         gambas3-gb-form-terminal (>= ${binary:Version}),
+         gambas3-gb-gmp (>= ${binary:Version}),
+         gambas3-gb-gsl (>= ${binary:Version}),
+         gambas3-gb-gui-opengl (>= ${binary:Version}),
+         gambas3-gb-gui-qt (>= ${binary:Version}),
+         gambas3-gb-gui-qt-webkit (>= ${binary:Version}),
+         gambas3-gb-httpd (>= ${binary:Version}),
+         gambas3-gb-image-effect (>= ${binary:Version}),
+         gambas3-gb-image-imlib (>= ${binary:Version}),
+         gambas3-gb-image-io (>= ${binary:Version}),
+         gambas3-gb-inotify (>= ${binary:Version}),
+#         gambas3-gb-jit (>= ${binary:Version}),
+         gambas3-gb-libxml (>= ${binary:Version}),
+         gambas3-gb-logging (>= ${binary:Version}),
+         gambas3-gb-map (>= ${binary:Version}),
+         gambas3-gb-markdown (>= ${binary:Version}),
+         gambas3-gb-media (>= ${binary:Version}),
+         gambas3-gb-memcached (>= ${binary:Version}),
+         gambas3-gb-mime (>= ${binary:Version}),
+         gambas3-gb-mysql (>= ${binary:Version}),
+         gambas3-gb-ncurses (>= ${binary:Version}),
+         gambas3-gb-net-curl (>= ${binary:Version}),
+         gambas3-gb-net-pop3 (>= ${binary:Version}),
+         gambas3-gb-net-smtp (>= ${binary:Version}),
+         gambas3-gb-openal (>= ${binary:Version}),
+         gambas3-gb-opengl-glsl (>= ${binary:Version}),
+         gambas3-gb-opengl-glu (>= ${binary:Version}),
+         gambas3-gb-opengl-sge (>= ${binary:Version}),
+         gambas3-gb-openssl (>= ${binary:Version}),
+         gambas3-gb-option (>= ${binary:Version}),
+         gambas3-gb-pcre (>= ${binary:Version}),
+         gambas3-gb-pdf (>= ${binary:Version}),
+         gambas3-gb-qt4 (>= ${binary:Version}),
+         gambas3-gb-qt4-ext (>= ${binary:Version}),
+         gambas3-gb-qt4-webkit (>= ${binary:Version}),
+         gambas3-gb-qt5 (>= ${binary:Version}),
+         gambas3-gb-qt5-ext (>= ${binary:Version}),
+         gambas3-gb-qt5-webkit (>= ${binary:Version}),
+         gambas3-gb-report (>= ${binary:Version}),
+         gambas3-gb-report2 (>= ${binary:Version}),
+         gambas3-gb-scanner (>= ${binary:Version}),
+         gambas3-gb-sdl-sound (>= ${binary:Version}),
+         gambas3-gb-sdl2 (>= ${binary:Version}),
+         gambas3-gb-sdl2-audio (>= ${binary:Version}),
+         gambas3-gb-settings (>= ${binary:Version}),
+         gambas3-gb-util (>= ${binary:Version}),
+         gambas3-gb-util-web (>= ${binary:Version}),
+         gambas3-gb-term-form (>= ${binary:Version}),
+         gambas3-gb-v4l (>= ${binary:Version}),
+         gambas3-gb-vb,
+         gambas3-gb-web,
+         gambas3-gb-xml-html (>= ${binary:Version}),
+         gambas3-gb-xml-rpc (>= ${binary:Version}),
+         gambas3-gb-xml-xslt (>= ${binary:Version}),
+         gambas3-ide (>= ${binary:Version}),
+         gambas3-templates,
+         ${misc:Depends}
 Description: Complete visual development environment for Gambas
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -25,24 +169,36 @@ Description: Complete visual development environment for Gambas
 
 Package: gambas3-dev
 Architecture: any
-Section: devel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas compilation tools
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package includes the Gambas compiler, archiver and informer.
 
+Package: gambas3-templates
+Architecture: any
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas templates
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package includes the Gambas templates.
+
 Package: gambas3-gb-cairo
 Architecture: any
-Section: devel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-image (>= ${binary:Version})
+Depends: gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas bindings for cairo
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package includes Gambas bindings for cairo.
-
 
 Package: gambas3-gb-clipper
 Architecture: any
@@ -55,11 +211,11 @@ Description: Gambas Clipper component
  This package includes a component based on the Clipper library,
  http://www.angusj.com/delphi/clipper.php
 
-
 Package: gambas3-gb-dbus
 Architecture: any
-Section: devel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas bindings for DBUS
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -68,8 +224,9 @@ Description: Gambas bindings for DBUS
 
 Package: gambas3-gb-form-stock
 Architecture: all
-Section: devel
-Depends: ${misc:Depends}, gambas3-gb-form (>= ${binary:Version}), gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-gb-form (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas form stock icons
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -87,20 +244,13 @@ Description: Gambas GMP component
  This package provides an interface to the GNU Multiple Precision Arithmetic
  Library.
 
-Package: gambas3-examples
-Architecture: all
-Section: devel
-Depends: ${misc:Depends}, gambas3-runtime
-Description: Gambas examples
- Gambas is a free development environment based on a Basic interpreter
- with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
- .
- This package provides the examples.
-
 Package: gambas3-gb-chart
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-gui (>= ${binary:Version}), gambas3-gb-form (>= ${binary:Version})
+Depends: gambas3-gb-form (>= ${binary:Version}),
+         gambas3-gb-gui (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas charting component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -110,7 +260,9 @@ Description: Gambas charting component
 Package: gambas3-gb-compress
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas compression component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -121,7 +273,9 @@ Description: Gambas compression component
 Package: gambas3-gb-compress-bzlib2
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-compress (>= ${binary:Version})
+Depends: gambas3-gb-compress (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas bzlib2 component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -132,7 +286,9 @@ Description: Gambas bzlib2 component
 Package: gambas3-gb-compress-zlib
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-compress (>= ${binary:Version})
+Depends: gambas3-gb-compress (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas zlib compression component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -143,7 +299,9 @@ Description: Gambas zlib compression component
 Package: gambas3-gb-crypt
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas crypt encription component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -153,7 +311,11 @@ Description: Gambas crypt encription component
 Package: gambas3-gb-db
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-form (>= ${source:Version}), gambas3-gb-qt4-ext (>= ${binary:Version}), gambas3-runtime
+Depends: gambas3-gb-form (>= ${source:Version}),
+         gambas3-gb-gui-qt (>= ${binary:Version}),
+         gambas3-runtime,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas database access common libraries
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -163,7 +325,10 @@ Description: Gambas database access common libraries
 Package: gambas3-gb-db-form
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-db (>= ${binary:Version}), gambas3-gb-form (>= ${binary:Version})
+Depends: gambas3-gb-db (>= ${binary:Version}),
+         gambas3-gb-form (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas database bound controls
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -175,7 +340,9 @@ Description: Gambas database bound controls
 Package: gambas3-gb-db-mysql
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-db (>= ${binary:Version})
+Depends: gambas3-gb-db (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: MySQL driver for the Gambas database
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -185,7 +352,9 @@ Description: MySQL driver for the Gambas database
 Package: gambas3-gb-db-odbc
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-db (>= ${binary:Version})
+Depends: gambas3-gb-db (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: ODBC driver for the Gambas database
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -196,90 +365,142 @@ Description: ODBC driver for the Gambas database
 Package: gambas3-gb-db-postgresql
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-db (>= ${binary:Version})
+Depends: gambas3-gb-db (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: PostgreSQL driver for the Gambas database
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package allows you to access PostgreSQL databases.
 
-Package: gambas3-gb-db-sqlite2
-Architecture: any
-Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-db (>= ${binary:Version})
-Description: Gambas sqlite2 driver database
- Gambas is a free development environment based on a Basic interpreter
- with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
- .
- This package allows you to access to sqlite 2 databases (not for sqlite 3,
- there is another package for sqlite 3) from Gambas code.
-
 Package: gambas3-gb-db-sqlite3
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-db (>= ${binary:Version})
+Depends: gambas3-gb-db (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas sqlite3 driver database
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This package allows you to access to sqlite3 databases (not for sqlite 2,
- there is another package for sqlite 2) from Gambas code.
+ This package allows you to access to sqlite3 databases from Gambas code.
 
 Package: gambas3-gb-desktop
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-form (>= ${source:Version}), xdg-utils, gambas3-runtime
+Depends: gambas3-gb-form (>= ${source:Version}),
+         gambas3-runtime,
+         xdg-utils,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas Portland project compatibility component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This package provides access to the Portland project 
+ This package provides access to the Portland project
  (http://portland.freedesktop.org/wiki/) xdg utilities.
+
+Package: gambas3-gb-desktop-x11
+Architecture: any
+Section: libdevel
+Depends: gambas3-gb-form (>= ${source:Version}),
+         gambas3-runtime,
+         xdg-utils,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Replaces: gambas3-gb-desktop (<< 3.6.2-1)
+Breaks: gambas3-gb-desktop (<< 3.6.2-1)
+Description: Gambas Portland project compatibility component for X11
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package provides access to the Portland project
+ (http://portland.freedesktop.org/wiki/) xdg X11 utilities.
 
 Package: gambas3-gb-form
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-gui (>= ${binary:Version}), gambas3-gb-settings (>= ${binary:Version})
+Depends: gambas3-gb-gui (>= ${binary:Version}),
+         gambas3-gb-settings (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas native form component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This is a native gambas component to serve as base for graphic components. 
+ This is a native gambas component to serve as base for graphic components.
 
 Package: gambas3-gb-form-dialog
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-form (>= ${binary:Version})
-Description: Gambas native mdi form component
+Depends: gambas3-gb-form (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
+Description: Gambas native dialog form component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This is a native gambas component that implements the Workspace control. 
+ This is a native gambas component that implements the Workspace dialog
+ control.
+
+Package: gambas3-gb-form-editor
+Architecture: all
+Section: libdevel
+Depends: gambas3-gb-eval-highlight (>= ${binary:Version}),
+         gambas3-gb-form (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
+Description: Gambas native editor form component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This component provides the TextEditor control, which is a text editor
+ with syntax highlighting support.
 
 Package: gambas3-gb-form-mdi
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-form (>= ${binary:Version})
+Depends: gambas3-gb-form (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas native mdi form component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This is a native gambas component that implements the Workspace control. 
+ This is a native gambas component that implements the Workspace mdi control.
 
 Package: gambas3-gb-gtk
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}), gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas GTK+ component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  These are the GTK+ components for Gambas.
 
+Package: gambas3-gb-gtk3
+Architecture: any
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}), gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas GTK+3 component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ These are the GTK+3 components for Gambas.
+
 Package: gambas3-gb-gtk-opengl
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-gtk (>= ${binary:Version}), gambas3-gb-opengl (>= ${binary:Version})
+Depends: gambas3-gb-gtk (>= ${binary:Version}),
+         gambas3-gb-opengl (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas GTK+ OpenGL component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -289,20 +510,24 @@ Description: Gambas GTK+ OpenGL component
 Package: gambas3-gb-gui
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-qt4 (>= ${binary:Version}), gambas3-gb-gtk (>= ${binary:Version})
+Depends: gambas3-gb-gtk (>= ${binary:Version}) | gambas3-gb-gtk3 (>= ${binary:Version}) | gambas3-gb-qt4 (>= ${binary:Version}) | gambas3-gb-qt5 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas graphical toolkit selector
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This package just loads gb.qt4 if you are running KDE or gb.gtk in
- the other cases. It will make your application more desktop-friendly!
+ This package just loads gb.qt4 if you are running KDE, gb.gtk or gb.gtk3
+ in the other cases. It will make your application more desktop-friendly!
  If the GB_GUI environment variable is set, then gb.gui will load the
  component specified by its contents.
 
 Package: gambas3-gb-gui-opengl
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-gui (>= ${binary:Version}), gambas3-gb-gtk-opengl (>= ${binary:Version}), gambas3-gb-qt4-opengl (>= ${binary:Version})
+Depends: gambas3-gb-gui (>= ${binary:Version}), gambas3-gb-opengl (>= ${binary:Version}), gambas3-gb-gtk-opengl (>= ${binary:Version}) | gambas3-gb-qt5-opengl (>= ${binary:Version}) | gambas3-gb-qt4-opengl (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas OpenGL selector
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -313,7 +538,9 @@ Description: Gambas OpenGL selector
 Package: gambas3-gb-pdf
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas pdf component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -323,7 +550,9 @@ Description: Gambas pdf component
 Package: gambas3-gb-image
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas image effects
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -336,7 +565,9 @@ Description: Gambas image effects
 Package: gambas3-gb-image-io
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-image (>= ${binary:Version})
+Depends: gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas image effects: I/O
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -346,7 +577,9 @@ Description: Gambas image effects: I/O
 Package: gambas3-gb-image-imlib
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-image (>= ${binary:Version})
+Depends: gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas image effects: IMLIB bindings
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -356,17 +589,45 @@ Description: Gambas image effects: IMLIB bindings
 Package: gambas3-gb-image-effect
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-image (>= ${binary:Version})
+Depends: gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas image effects: effects
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  Subcomponent for the image component: image effects.
 
+Package: gambas3-gb-inotify
+Architecture: linux-any
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas filesystem events monitoring component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package allows you to monitor filesystem events.
+
+Package: gambas3-gb-markdown
+Architecture: any
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas markdown convert component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package allows you to convert gambas markdown syntax to HTML.
+
 Package: gambas3-gb-net
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas networking component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -374,10 +635,53 @@ Description: Gambas networking component
  This package allows you to use TCP/IP and UDP sockets, and to access
  any serial ports.
 
+Package: gambas3-gb-scanner
+Architecture: any
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas scanner component
+ The Gambas scanner management library is a frontend of the ScanImage
+ program provided by the sane toolkit. It allows one to easily manage scanner
+ devices in Gambas code.
+ .
+ This package allows you to use and manage scanner devices in Gambas code.
+
+Package: gambas3-gb-util
+Architecture: any
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: This component provides many useful utility methods or classes
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package allows you to use many useful utilities methods or classes, such
+ as: CSV file read and decode, date and time functions, file utility functions,
+ shell methods, string utility functions.
+
+Package: gambas3-gb-util-web
+Architecture: any
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: This component provides many utilities useful for web applications
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package allows you to use many utilities useful for web applications, such
+ as: decode and encode the JSON format and dealing with URL strings.
+
 Package: gambas3-gb-net-curl
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-net (>= ${binary:Version})
+Depends: gambas3-gb-net (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas advanced networking component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -387,7 +691,10 @@ Description: Gambas advanced networking component
 Package: gambas3-gb-net-smtp
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-net (>= ${binary:Version})
+Depends: gambas3-gb-net (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas smtp protocol component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -400,13 +707,15 @@ Description: Gambas smtp protocol component
 Package: gambas3-gb-net-pop3
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-net (>= ${binary:Version}), gambas3-runtime
+Depends: gambas3-gb-net (>= ${binary:Version}),
+         gambas3-runtime,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas POP3 client implementation
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package retrieves mails using the POP3 protocol.
-
 
 Package: gambas3-gb-openal
 Architecture: any
@@ -418,11 +727,12 @@ Description: Gambas OpenAL component
  .
  This package includes an interface to the OpenAL 3D Audio library.
 
-
 Package: gambas3-gb-opengl
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}), gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas OpenGL component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -432,7 +742,9 @@ Description: Gambas OpenGL component
 Package: gambas3-gb-opengl-glsl
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-opengl (>= ${binary:Version})
+Depends: gambas3-gb-opengl (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas OpenGL component: GL Shading Language subcomponent
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -442,7 +754,9 @@ Description: Gambas OpenGL component: GL Shading Language subcomponent
 Package: gambas3-gb-opengl-glu
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-opengl (>= ${binary:Version})
+Depends: gambas3-gb-opengl (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas OpenGL utility
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -452,7 +766,9 @@ Description: Gambas OpenGL utility
 Package: gambas3-gb-opengl-sge
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-opengl (>= ${binary:Version})
+Depends: gambas3-gb-opengl (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas SDL Game Engine
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -469,11 +785,12 @@ Description: Gambas OpenSSL component
  .
  This package provides the cryptographic functions available in OpenSSL.
 
-
 Package: gambas3-gb-pcre
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas regexp component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -484,57 +801,180 @@ Description: Gambas regexp component
 Package: gambas3-gb-qt4
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}), gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas Qt GUI component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package includes the Gambas QT GUI component.
 
+Package: gambas3-gb-qt5
+Architecture: any
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}), gambas3-gb-image (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas Qt5 GUI component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package includes the Gambas QT5 GUI component.
+
+Package: gambas3-gb-qt5-ext
+Architecture: any
+Section: libdevel
+Depends: gambas3-gb-qt5 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas extended Qt GUI component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ Extension widgets for Qt5: currently only a rich text editor widget.
+
 Package: gambas3-gb-qt4-ext
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-qt4 (>= ${binary:Version})
+Depends: gambas3-gb-qt4 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas extended Qt GUI component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package includes some uncommon QT controls.
 
+Package: gambas3-gb-gui-qt-webkit
+Architecture: any
+Section: kde
+Depends: gambas3-gb-qt5-webkit (>= ${binary:Version}) |
+         gambas3-gb-qt4-webkit (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas WebKit component loader
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package allows you to use the WebKit browser component from Qt5.
+ .
+ This component will load either the gb.qt4.webkit or gb.qt5.webkit
+ component according to the current desktop in use.
+
+Package: gambas3-gb-gui-qt
+Architecture: any
+Section: kde
+Depends: gambas3-gb-qt5 (>= ${binary:Version}) | gambas3-gb-qt4 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This component will load either the gb.qt4 or the gb.qt5 component,
+ according to the current desktop in use.
+ .
+ If you use KDE 4, then gb.qt4 will be loaded.
+ In all other cases, gb.qt5 will be loaded.
+ .
+ If the GB_GUI environmental variable is defined, then gb.gui.qt will
+ load the component specified in it, whatever desktop is currently used.
+
+Package: gambas3-gb-gui-trayicon
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Gambas trayicon gui QT component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This component allows one to display a tray icon inside the system tray (QT)
+ in the gui package.
+
 Package: gambas3-gb-qt4-webkit
 Architecture: any
 Section: kde
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-qt4 (>= ${binary:Version})
+Depends: gambas3-gb-qt4 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas WebKit component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package allows you to use the WebKit browser component from Qt4.
 
-Package: gambas3-gb-qt4-opengl
+Package: gambas3-gb-qt5-webkit
 Architecture: any
-Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-qt4 (>= ${binary:Version})
-Description: Gambas OpenGL component with QT toolkit
+Section: kde
+Depends: gambas3-gb-qt5 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas WebKit component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This package allows you integrate OpenGL in qt applications.
+ This package allows you to use the WebKit browser component from Qt5.
+
+Package: gambas3-gb-qt4-opengl
+Architecture: any
+Section: libdevel
+Depends: gambas3-gb-qt4 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas OpenGL component with QT4 toolkit
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package allows you integrate OpenGL in qt4 applications.
+
+Package: gambas3-gb-qt5-opengl
+Architecture: any
+Section: libdevel
+Depends: gambas3-gb-qt5 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas OpenGL component with QT5 toolkit
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package allows you integrate OpenGL in qt5 applications.
 
 Package: gambas3-gb-report
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-qt4 (>= ${binary:Version}), gambas3-gb-form (>= ${binary:Version}), gambas3-gb-db (>= ${binary:Version})
+Depends: gambas3-gb-db (>= ${binary:Version}),
+         gambas3-gb-form (>= ${binary:Version}),
+         gambas3-gb-gui-qt (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas report component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package gives the tools and methods to create reports using Gambas.
 
+Package: gambas3-gb-report2
+Architecture: all
+Section: libdevel
+Depends: gambas3-gb-db (>= ${binary:Version}),
+         gambas3-gb-form (>= ${binary:Version}),
+         gambas3-gb-gui-qt (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
+Description: Gambas report2 component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package gives the tools and methods to create reports using Gambas
+ report 2 package.
+
 Package: gambas3-gb-sdl
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version}), fonts-dejavu-core 
+Depends: fonts-dejavu-core,
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas SDL component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -545,19 +985,47 @@ Description: Gambas SDL component
 Package: gambas3-gb-sdl-sound
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-sdl (>= ${binary:Version})
-Description: Gambas SDL component
+Depends: gambas3-gb-sdl (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas SDL sound component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package use the sound image parts of the SDL library.
  It allows you to simultaneously play many sounds and a music stored in a file.
 
+Package: gambas3-gb-sdl2
+Architecture: any
+Section: libdevel
+Depends: fonts-dejavu-core,
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas SDL2 component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package use the ttf fonts parts of the SDL2 library.
+ If opengl drivers are installed it uses it to accelerate 2D and 3D drawing.
+
+Package: gambas3-gb-sdl2-audio
+Architecture: any
+Section: libdevel
+Depends: gambas3-gb-sdl2 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Gambas SDL2 audio component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This package use the audio image parts of the SDL2 library.
+ It allows you to simultaneously play many sounds and a music stored in a file.
 
 Package: gambas3-gb-settings
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}), ${misc:Depends}
 Description: Gambas utilities class
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -565,9 +1033,11 @@ Description: Gambas utilities class
  This is a component made in Gambas providing several utilities.
 
 Package: gambas3-gb-v4l
-Architecture: any
+Architecture: kfreebsd-any linux-any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas video for Linux component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -577,7 +1047,9 @@ Description: Gambas video for Linux component
 Package: gambas3-gb-vb
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas Visual Basic(tm) compatibility component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -588,7 +1060,7 @@ Description: Gambas Visual Basic(tm) compatibility component
 Package: gambas3-gb-web
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}), ${misc:Depends}
 Description: Gambas CGI for web applications
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -599,17 +1071,21 @@ Description: Gambas CGI for web applications
 Package: gambas3-gb-xml
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas XML component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This package brings the power of the libxml libraries to Gambas.
+ This package brings the power of the xml libraries to Gambas.
 
 Package: gambas3-gb-xml-rpc
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-gb-xml (>= ${binary:Version}), gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-gb-xml (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas RPC component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -619,16 +1095,20 @@ Description: Gambas RPC component
 Package: gambas3-gb-xml-xslt
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-xml (>= ${binary:Version})
+Depends: gambas3-gb-xml (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas XSLT component
  Gambas is a free development environment based on a Basic interpreter
- with object extensions, like Visual Basic(tm) (but it is NOT a clone!). 
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  This package brings the power of the libxslt libraries to Gambas.
 
 Package: gambas3-gb-xml-html
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-xml (>= ${binary:Version})
+Depends: gambas3-gb-xml (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas HTML component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -638,7 +1118,9 @@ Description: Gambas HTML component
 Package: gambas3-gb-libxml
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-xml (>= ${binary:Version})
+Depends: gambas3-gb-xml (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas libxml component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -647,9 +1129,31 @@ Description: Gambas libxml component
 
 Package: gambas3-ide
 Architecture: all
-Section: devel
-Recommends: gambas3-examples, rpm
-Depends: debhelper, fakeroot, ${misc:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-image-effect (>= ${binary:Version}), gambas3-dev (>= ${binary:Version}), gambas3-gb-db-form (>= ${binary:Version}), gambas3-gb-form-stock (>= ${binary:Version}), gambas3-gb-form (>= ${binary:Version}), gambas3-gb-form-dialog (>= ${binary:Version}), gambas3-gb-form-mdi (>= ${binary:Version}), gambas3-gb-db (>= ${binary:Version}), gambas3-gb-desktop (>= ${binary:Version}), gambas3-gb-qt4 (>= ${binary:Version}), gambas3-gb-qt4-ext (>= ${binary:Version}), gambas3-gb-settings (>= ${binary:Version}), gambas3-gb-qt4-webkit (>= ${binary:Version}), gambas3-gb-eval-highlight (>= ${binary:Version}), gambas3-gb-clipper (>= ${binary:Version})
+Recommends: rpm
+Depends: debhelper,
+         fakeroot,
+         gambas3-dev (>= ${binary:Version}),
+         gambas3-gb-clipper (>= ${binary:Version}),
+         gambas3-gb-db (>= ${binary:Version}),
+         gambas3-gb-db-form (>= ${binary:Version}),
+         gambas3-gb-desktop (>= ${binary:Version}),
+         gambas3-gb-desktop-x11 (>= ${binary:Version}),
+         gambas3-gb-eval-highlight (>= ${binary:Version}),
+         gambas3-gb-form (>= ${binary:Version}),
+         gambas3-gb-form-dialog (>= ${binary:Version}),
+         gambas3-gb-form-editor (>= ${binary:Version}),
+         gambas3-gb-form-mdi (>= ${binary:Version}),
+         gambas3-gb-form-stock (>= ${binary:Version}),
+         gambas3-gb-gui-trayicon (>= ${binary:Version}),
+         gambas3-gb-image-effect (>= ${binary:Version}),
+         gambas3-gb-qt5 (>= ${binary:Version}),
+         gambas3-gb-gui-qt (>= ${binary:Version}),
+         gambas3-gb-gui-qt-webkit (>= ${binary:Version}),
+         gambas3-gb-qt5-webkit (>= ${binary:Version}),
+         gambas3-gb-settings (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         gambas3-gb-util (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Visual development environment for the Gambas programming language
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -659,7 +1163,7 @@ Description: Visual development environment for the Gambas programming language
 Package: gambas3-runtime
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, xdg-utils
+Depends: xdg-utils, ${misc:Depends}, ${shlibs:Depends}
 Description: Gambas runtime interpreter
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -669,7 +1173,9 @@ Description: Gambas runtime interpreter
 Package: gambas3-script
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-dev (>= ${binary:Version}), gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-dev (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas scripter
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -679,7 +1185,9 @@ Description: Gambas scripter
 Package: gambas3-gb-option
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas option component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -689,7 +1197,7 @@ Description: Gambas option component
 Package: gambas3-gb-eval-highlight
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}), ${misc:Depends}
 Description: Gambas syntax highlighting component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -699,7 +1207,9 @@ Description: Gambas syntax highlighting component
 Package: gambas3-gb-signal
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas OS signal library
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -709,7 +1219,9 @@ Description: Gambas OS signal library
 Package: gambas3-gb-mysql
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas MySQL component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -719,17 +1231,21 @@ Description: Gambas MySQL component
 Package: gambas3-gb-gsl
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas GNU Scientific Library component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package uses the GNU Scientific Library.
- 
+
 Package: gambas3-gb-ncurses
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas NCurses component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -739,7 +1255,9 @@ Description: Gambas NCurses component
 Package: gambas3-gb-complex
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas Complex component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -749,7 +1267,9 @@ Description: Gambas Complex component
 Package: gambas3-gb-data
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas abstract datatypes component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -759,7 +1279,9 @@ Description: Gambas abstract datatypes component
 Package: gambas3-gb-mime
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas MIME message management
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -770,7 +1292,9 @@ Description: Gambas MIME message management
 Package: gambas3-gb-httpd
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas HTTP server
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -780,7 +1304,10 @@ Description: Gambas HTTP server
 Package: gambas3-gb-memcached
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-net (>= ${binary:Version})
+Depends: gambas3-gb-net (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas memcached client
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -790,7 +1317,9 @@ Description: Gambas memcached client
 Package: gambas3-gb-args
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas arguments parser
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -801,28 +1330,32 @@ Description: Gambas arguments parser
 Package: gambas3-gb-map
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version}), gambas3-gb-net-curl (>= ${binary:Version}), gambas3-gb-xml (>= ${binary:Version}), gambas3-gb-db-form (>= ${binary:Version})
+Depends: gambas3-gb-db-form (>= ${binary:Version}),
+         gambas3-gb-net-curl (>= ${binary:Version}),
+         gambas3-gb-xml (>= ${binary:Version}),
+         gambas3-runtime (>= ${binary:Version}),
+         ${misc:Depends}
 Description: Gambas online map viewer
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package allowing to display maps from many different sources
  (Google Maps, OpenStreetMap).
- 
-Package: gambas3-gb-jit
-Architecture: amd64 armel armhf i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc s390 s390x sparc
-Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Gambas Just-In-Time compiler component
- Gambas is a free development environment based on a Basic interpreter
- with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
- .
- This package provides a Just-In-Time compiler for Gambas.
+
+#Package: gambas3-gb-jit
+#Architecture: kfreebsd-any linux-any
+#Section: libdevel
+#Depends: ${misc:Depends}, ${shlibs:Depends}
+#Description: Gambas Just-In-Time compiler component
+# Gambas is a free development environment based on a Basic interpreter
+# with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+# .
+# This package provides a Just-In-Time compiler for Gambas.
 
 Package: gambas3-gb-media
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: gambas3-runtime, ${misc:Depends}, ${shlibs:Depends}
 Description: Gambas media component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
@@ -832,20 +1365,46 @@ Description: Gambas media component
 Package: gambas3-gb-logging
 Architecture: all
 Section: libdevel
-Depends: ${misc:Depends}, gambas3-runtime (>= ${binary:Version})
+Depends: gambas3-runtime (>= ${binary:Version}), ${misc:Depends}
 Description: Gambas logging system component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  This package brings a flexible logging system for Gambas applications.
 
-
-Package: gambas3-gb-desktop-gnome
+Package: gambas3-gb-desktop-gnome-keyring
+Replaces: gambas3-gb-desktop-gnome (<< 3.6.2-1)
+Breaks: gambas3-gb-desktop-gnome (<< 3.6.2-1)
 Architecture: any
 Section: libdevel
-Depends: ${misc:Depends}, ${shlibs:Depends}, gambas3-gb-desktop (>= ${binary:Version})
+Depends: gambas3-gb-desktop (>= ${binary:Version}),
+         gambas3-gb-desktop-x11 (>= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Gambas desktop GNOME component
  Gambas is a free development environment based on a Basic interpreter
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
- This package allow to use gb.desktop components on GNOME desktop.
+ This package allow one to use gb.desktop components on GNOME desktop.
+
+Package: gambas3-gb-form-terminal
+Architecture: all
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}), ${misc:Depends},
+ gambas3-gb-form (>= ${binary:Version})
+Description: Gambas terminal form component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ A GUI component that provides a VT100-type terminal emulator widget.
+
+Package: gambas3-gb-term-form
+Architecture: all
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}), ${misc:Depends},
+ gambas3-gb-form-terminal (>= ${binary:Version})
+Description: Gambas GUI terminal form component
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ A component for making the GUI of terminal applications.

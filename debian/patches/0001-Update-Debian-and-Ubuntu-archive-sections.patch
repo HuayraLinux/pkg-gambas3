@@ -1,0 +1,40 @@
+diff --git a/app/src/gambas3/install/group/debian b/app/src/gambas3/install/group/debian
+index 42a45f2f..af419329 100644
+--- a/app/src/gambas3/install/group/debian
++++ b/app/src/gambas3/install/group/debian
+@@ -6,6 +6,7 @@ debug
+ devel
+ doc
+ editors
++education
+ electronics
+ embedded
+ fonts
+@@ -13,6 +14,7 @@ games
+ gnome
+ gnu-r
+ gnustep
++golang
+ graphics
+ hamradio
+ haskell
+diff --git a/app/src/gambas3/install/group/ubuntu b/app/src/gambas3/install/group/ubuntu
+index 42a45f2f..af419329 100644
+--- a/app/src/gambas3/install/group/ubuntu
++++ b/app/src/gambas3/install/group/ubuntu
+@@ -6,6 +6,7 @@ debug
+ devel
+ doc
+ editors
++education
+ electronics
+ embedded
+ fonts
+@@ -13,6 +14,7 @@ games
+ gnome
+ gnu-r
+ gnustep
++golang
+ graphics
+ hamradio
+ haskell

@@ -1,3 +1,188 @@
+gambas3 (3.10.0-2) torbellino; urgency=medium
+
+  [ Matias De lellis ]
+  * Backport to Huayra GNU/Linux
+  * Lot fixes..
+
+ -- Matias De lellis <mati86dl@gmail.com>  Wed, 07 Mar 2017 10:58:43 -0300
+
+gambas3 (3.10.0-1) UNRELEASED; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * New upstream release
+  * Bump std-version to 4.1.2, no changes required
+  * Drop old transitional gb-desktop-gnome package, thanks Holger for
+    the report and fix (Closes: #874760)
+
+  [ Pino Toscano ]
+  * Remove useless qtwebkit dependency
+    (Closes: #867306)
+
+  [ Gianfranco Costamagna ]
+  * Update sections with new patch (Closes: #880695)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 06 Jul 2017 09:58:43 +0200
+
+gambas3 (3.9.2-2) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Drop sqlite2 old package
+  * Fix gcc7 build failure with upstream patch (Closes: #853411)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 05 Jul 2017 19:25:54 +0200
+
+gambas3 (3.9.2-1) unstable; urgency=medium
+
+  * Team Upload.
+  * New upstream release.
+  * Bump std-version to 4.0.0
+  * Bump compat level to 10
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 20 Jun 2017 19:05:16 +0200
+
+gambas3 (3.9.1-3) unstable; urgency=medium
+
+  * Team Upload
+  * Drop libmodplug-dev, useless
+    (Closes: #850525)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 07 Jan 2017 18:04:32 +0100
+
+gambas3 (3.9.1-2) unstable; urgency=medium
+
+  * Team Upload
+
+  [ Josh Triplett ]
+  * Add new programming language sections (Closes: #847533)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 09 Dec 2016 08:25:00 +0100
+
+gambas3 (3.9.1-1) unstable; urgency=medium
+
+  [ Ian Haywood ]
+  * New upstream version (Closes: #837541, #838309)
+
+  [ José L. Redrejo Rodríguez ]
+  * Fixed build dependencies 
+  * Removed gitignore files from upstream when building the debs
+
+ -- José L. Redrejo Rodríguez <jredrejo@debian.org>  Sat, 08 Oct 2016 19:42:37 +0200
+
+gambas3 (3.8.4-6) unstable; urgency=medium
+
+  * debian/patches/openssl-fixes.patch:
+    - fix openssl 1.1 incompatibilities (Closes: #828307)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 01 Jul 2016 08:36:09 +0200
+
+gambas3 (3.8.4-5) unstable; urgency=medium
+
+  * Team upload
+  * Revert my previous change, because it breaks some arch:all
+    build.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 30 Jun 2016 11:28:30 +0200
+
+gambas3 (3.8.4-4) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * Fix compilation on hurd, by restricting the architecures list
+    (Closes: #829056)
+  * Remove useless kdelibs5-dev dependency (Closes: #829058)
+
+  [ Gianfranco Costamagna ]
+  * Team upload
+  * Fix installation on hurd, by restricting the gambas3 dependencies
+    (where not built)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Thu, 30 Jun 2016 10:11:41 +0200
+
+gambas3 (3.8.4-3) unstable; urgency=medium
+
+  [ Ian Haywood ]
+  * patch to use Qt5 preferentially over Qt4. This way the IDE works when both Qt4 and Qt5 present. 
+  * Remove Conflicts on Qt4 for the the IDE as now unnecessary (Closes: #814862)
+
+  [ Gianfranco Costamagna ]
+  * Team upload.
+  * Fix unsecure VCS uri.
+  * Disable jit package, not llvm-3.6+ ready.
+  * Bump std-version to 3.9.8, no changes required.
+  * debian/patches/fix-build-failure.patch.
+    - cherry-pick upstream r7740 to fix build failure.
+
+  [ trek00@inbox.ru ]
+  * Tweak gb.gui dependencies to not force many graphic implementations
+    (Closes: #823908)
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 15 Jun 2016 14:40:21 +0200
+
+gambas3 (3.8.4-2) unstable; urgency=medium
+
+  * Team upload.
+  * Switch to libpng-dev to ease libpng transition (Closes: #809862).
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 05 Jan 2016 00:12:43 +0100
+
+gambas3 (3.8.4-1) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable
+  * Update libgsl0-dev to libgsl-dev, to ease gsl transition.
+  * Remove deprecated menu file (Per the tech-ctte decision on #741573)
+  * Disable qt4 webkit (Closes: #784465).
+  * New upstream release, drop gnu_support patch, merged upstream
+    (Closes: #807061).
+  * Add breaks+replaces for gb-desktop{x11} package. (Closes: #787921)
+  * Drop -examples package, dropped upstream.
+  * Add new pacages: gambas3-gb-report2 gambas3-gb-sdl2-audio gambas3-gb-sdl2
+    gambas3-gb-util gambas3-gb-util-web gambas3-gb-scanner
+  * Add some new build-dependencies, needed for new sdl2 packages:
+    libsdl2-dev, libsdl2-image-dev, libsdl2-mixer-dev, libsdl2-ttf-dev
+  * Fix some install files.
+  * Drop DejaVuSans.ttf sdl link, dropped in version 3.5.3
+  * Add xdg-utils as build-dependency, needed to correctly handle mimes.
+  * fix copyright file, adding missing svg CC-by-sa licenses, removing some old
+    entries, making it really machine readable, add some public domain licenses
+    (Closes: #787761)
+  * Remove llvm-dev build-dependency, forcing llvm-3.5 (there is no planned
+    porting on top of a newer llvm release
+    (http://gambaswiki.org/bugtracker/edit?object=BUG.835).
+  * Simplify libv4l-dev build-dependency.
+  * Stop building gambas3-gb-inotify package on kfreebsd-* (missing libc header)
+  * move webkit support in new qt5 package.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 16 Dec 2015 15:10:28 +0100
+
+gambas3 (3.6.2-1) experimental; urgency=low
+
+  * Team upload.
+
+  [ José L. Redrejo Rodríguez ]
+  * Fixes in debian/rules & debian control to fix lintian warnings and errors
+
+  [ Gianfranco Costamagna ]
+  * New upstream release. (Closes: #775452)
+    - refresh patches.
+    - drop patches merged upstream: detect_browser_debian, fix-llvm-3.5.patch
+      fix_typos,
+    - move kfreebsd_support into gnu_support, since kfreebsd is now upstream
+      supported (cfr upstream issue 595 for the gnu support)
+  * Rewrite rules file, dropping old hacks, and following new dh rules.
+  * Bump standard version to 3.9.6, no changes required.
+  * Wrap and sort debian directory.
+  * Add appdata file
+  * Add libgtk-3-dev as build dependency, needed for the new gtk3 package.
+  * Add libdumb1, seems needed in the install target (spot by some build logs).
+  * Drop PHP3 License, the code has been removed already in 3.5.4.
+  * Drop SIL-1.1, file _default.bdf has been removed upstream.
+  * Tweak debian/rules to remove the _default.bdf file.
+  * New packages: gambas3-gb-desktop-x11, gambas3-gb-inotify,
+    gambas3-gb-markdown, gambas3-gb-gtk3.
+  * Fix some install files.
+
+ -- José L. Redrejo Rodríguez <jredrejo@debian.org>  Fri, 16 Jan 2015 17:24:39 +0100
+
 gambas3 (3.5.4-3) unstable; urgency=medium
 
   * Compile examples.
