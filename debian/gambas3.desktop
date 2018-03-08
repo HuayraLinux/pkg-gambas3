@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Gambas3
+Comment=Gambas3 Integrated Development Environment
+Exec=gambas3
+Type=Application
+Icon=gambas3
+Categories=Development;

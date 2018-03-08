@@ -1,0 +1,2 @@
+version=3
+http://sf.net/gambas/gambas3-(.+)\.tar\.(?:gz|bz2|xz)

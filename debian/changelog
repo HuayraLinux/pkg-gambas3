@@ -1,0 +1,111 @@
+gambas3 (3.5.4-3) unstable; urgency=medium
+
+  * Compile examples.
+
+ -- Matias De lellis <mati86dl@gmail.com>  Wed, 25 Feb 2015 12:22:44 -0300
+
+gambas3 (3.5.4-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Gianfranco Costamagna ]
+  * Add fix-llvm-3.5.patch, fixing the llvm-3.5 build failure.
+    (Closes: #763238)
+
+ -- José L. Redrejo Rodríguez <jredrejo@debian.org>  Mon, 13 Oct 2014 10:46:46 +0200
+
+gambas3 (3.5.4-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Gianfranco Costamagna ]
+  * New upstream version. (Closes: #752625, #754209)
+  * Added Vcs-* fields.
+  * Add gambas3-gb-clipper as dependency of gambas3-ide
+    (Closes: #749059), thanks to Shane Kerr.
+  * Bump compat level to 9.
+  * Remove d/p/find_postgresql_headers, addressed upstream.
+
+
+  [ Pino Toscano ]
+  * Adding parallel builds (Closes: #751217).
+
+ -- José L. Redrejo Rodríguez <jredrejo@debian.org>  Mon, 14 Apr 2014 10:46:46 +0200
+
+gambas3 (3.5.2-2) unstable; urgency=low
+
+  * New upstream version
+  * New packages gb.media, gb.logging, gb.desktop.gnome
+  * postgresql-server-dev-all needed to compile postgres 
+    drivers (Closes: #741789)
+
+ -- Ian Haywood <ian@haywood.id.au>  Wed, 02 Apr 2014 16:23:48 +1100
+
+gambas3 (3.5.2-1) unstable; urgency=low
+ 
+  * New upstream version
+  * Fix bug in gb.geom (Closes: #731487)
+  * Added SIL font licence to debian/copyright
+  * fix permissions on gb.sdl/data/src/_default.bdf
+
+ -- Ian Haywood <ian@haywood.id.au>  Fri, 14 Feb 2014 14:41:15 +1100
+
+gambas3 (3.5.1-1) unstable; urgency=low
+
+  [ José L. Redrejo Rodríguez ]
+  * New upstream release.
+  * Remove previous Poppler patch, as upstream is updated. Thanks to Pino
+    for its help while we were MIA.
+  * Removed patch from Sebastian Ramacher as it's not needed with this
+    new upstream version. Thanks to him and Dmitrijs Ledkovs for his NMU.
+  * debian/control:
+    - New gambas3 components.
+    - Added new dependencies for the new Gambas3 components.
+    - Fixed some build dependencies to match current Debian sid repo.
+  * debian/patches/fix_typos (Closes: #690509, #690510)
+  * debian/patches/kfreebsd_support (Closes: #710320) . Thanks to 
+    Steven Chamberlain.
+
+  [ Ian  Haywood ]
+  * Updated debian/copyright.
+  * Fixed some grammar errors in the changelog.
+  * Added gb.jit and its dependencies.
+  * debian/rules: moving to dpkg-buildflags.
+
+ -- José L. Redrejo Rodríguez <jredrejo@debian.org>  Tue, 03 Sep 2013 12:52:14 +0200
+
+gambas3 (3.1.1-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Backport upstream r4730, r4731, and r4732 to fix compatibility with
+    Poppler >= 0.20.x (Closes: #679885)
+
+ -- Pino Toscano <pino@debian.org>  Tue, 23 Jul 2013 11:32:16 +0200
+
+gambas3 (3.1.1-2.1) unstable; urgency=low
+
+  [ Sebastian Ramacher ]
+  * Non-maintainer upload.
+  * Fix FTBFS with eglibc-2.7. (Closes: #701393)
+
+  [ Dmitrijs Ledkovs ]
+  * Non-maintainer upload
+
+ -- Dmitrijs Ledkovs <xnox@debian.org>  Tue, 04 Jun 2013 23:16:32 +0100
+
+gambas3 (3.1.1-2) unstable; urgency=low
+
+  * debian/control:
+   - Removed hardcoded dependency on libglew1.5 (Closes: #674080)
+   - Replaced libpoppler-dev by libpoppler-private-dev build
+     dependency (Closes: #673746)
+   - Fine tuning some build dependencies trying to compile in freebsd archs
+
+ -- José L. Redrejo Rodríguez <jredrejo@debian.org>  Thu, 24 May 2012 13:00:18 +0200
+
+gambas3 (3.1.1-1) unstable; urgency=low
+
+  * First upload to Debian of gambas3 (Closes: #654424)
+
+ -- José L. Redrejo Rodríguez <jredrejo@debian.org>  Fri, 04 May 2012 18:21:24 +0200
+ 
