@@ -1,3 +1,9 @@
+gambas3 (3.10.0-3) torbellino; urgency=medium
+
+  * Rebuild to Huayra GNU/Linux 4
+
+ -- Matias De lellis <mati86dl@gmail.com>  Tue, 13 Mar 2018 14:39:26 -0300
+
 gambas3 (3.10.0-2) torbellino; urgency=medium
 
   [ Matias De lellis ]
