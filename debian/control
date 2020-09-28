@@ -1408,3 +1408,14 @@ Description: Gambas GUI terminal form component
  with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
  .
  A component for making the GUI of terminal applications.
+
+Package: gambas3-gb-term
+Architecture: any
+Section: libdevel
+Depends: gambas3-runtime (>= ${binary:Version}), ${misc:Depends}
+Description: Terminal manager for Gambas
+ Gambas is a free development environment based on a Basic interpreter
+ with object extensions, like Visual Basic(tm) (but it is NOT a clone!).
+ .
+ This component allows one to manage terminals, with an API very close to
+ the one provided by the operating system.
